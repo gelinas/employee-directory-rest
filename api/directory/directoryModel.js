@@ -9,8 +9,8 @@ module.exports = {
   remove
 };
 
-function add(event) {
-  return db('events')
+function add(employee) {
+  return db('employees')
     .insert(event, 'id')
     .then(ids => {
       const [id] = ids;
@@ -24,26 +24,26 @@ function find() {
 }
 
 function findBy(filter) {
-  return db('events')
+  return db('employees')
     .select('*')
     .where(filter);
 }
 
 function findById(id) {
-  return db('events')
+  return db('employees')
     .select('*')
     .where({ id })
     .first();
 }
 
 function update(changes, id){
-    return db('events')
+    return db('employees')
         .where({ id: id})
         .update(changes);
 }
 
 function remove(id){
-    return db('events')
+    return db('employees')
         .where({ id: id })
         .del();
 }
