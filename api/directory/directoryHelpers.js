@@ -29,7 +29,7 @@ function getAllEmployees(req, res, next) {
 
   Employees.find()
     .then(employeeList => {
-      res.json(employeeList);
+      req.employeeList = employeeList;
       next();
     })
     .catch(err => {
@@ -45,7 +45,7 @@ function getEmployeeById(req, res, next) {
 
   Employees.findById(id)
     .then(employee => {
-      res.json(employee)
+      req.employee = employee;
       next();
     })
     .catch(err => {
