@@ -60,6 +60,8 @@ function updateEmployee(req, res, next) {
   const { id } = req.params;
   const changes = req.body;
 
+  // add middleware to verify employee is in database before updating
+
   Employees.update(changes, id)
     .then(records => {
       // update returns count of records updated
@@ -76,8 +78,8 @@ function updateEmployee(req, res, next) {
             })
           })
       } else {
-        res.status(500).json({
-          message: `Error updating the employee in the database.`,
+        res.status(400).json({
+          message: `There is no employee with that id in the database.`,
           error: err.toString()
         })
       }

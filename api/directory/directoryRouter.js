@@ -22,11 +22,14 @@ router.get('/', getAllEmployees, (req, res) => {
 
 router.get('/:id', getEmployeeById, (req, res) => {
   // getEmployeeById adds employee record from database to req object
+  const { id } = req.params;
   const { employee } = req;
-  res.status(200).json(employee);
+  employee ?
+    res.status(200).json(employee)
+    : res.status(404).json({ message: `Employee with id ${id} is not in the database`})
 });
 
-router.put('/:id', updateEmployee, (req, res) => {
+router.post('/:id', updateEmployee, (req, res) => {
   // updateEmployee adds updatedEmployee record from database to req object
   let { updatedEmployee } = req;
   res.status(200).json(updatedEmployee)
