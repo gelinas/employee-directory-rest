@@ -98,15 +98,14 @@ function deleteEmployee(req, res, next) {
       if (records) {
         next();
       } else {
-        res.status(500).json({
-          message: `Error updating the employee in the database.`,
-          error: err.toString()
+        res.status(400).json({
+          message: `There is no employee with that id in the database.`,
         })
       }
     })
     .catch(err => {
       res.status(500).json({
-        message: `Error updating the employee in the database.`,
+        message: `Error deleting the employee in the database.`,
         error: err.toString()
       })
     });

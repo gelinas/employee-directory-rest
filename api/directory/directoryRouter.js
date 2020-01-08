@@ -34,6 +34,7 @@ router.put('/:id', updateEmployee, (req, res) => {
 
 router.delete('/:id', deleteEmployee, (req, res) => {
   // delete employee triggers response on error, passes through on success
+  const { id } = req.params;
   res.status(200).json({ message: `Employee with id ${id} deleted.`})
 });
 

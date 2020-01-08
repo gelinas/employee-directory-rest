@@ -11,7 +11,7 @@ module.exports = {
 
 function add(employee) {
   return db('employees')
-    .insert(event, 'id')
+    .insert(employee, 'id')
     .then(ids => {
       const [id] = ids;
       return findById(id);
