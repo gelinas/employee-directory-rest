@@ -21,17 +21,17 @@ module.exports = {
     },
   },
 
-  staging: {
+  testing: {
     client: 'sqlite3',
     useNullAsDefault: true, // needed for sqlite
     connection: {
-      filename: './data/stageData.db3'
+      filename: './data/testing/test.db3'
     },
     migrations: {
-      directory: './data/migrations'
+      directory: './data/testing/migrations'
     },
     seeds: {
-      directory: './data/seeds'
+      directory: './data/testing/seeds'
     },
     // needed when using foreign keys
     pool: {
@@ -42,11 +42,11 @@ module.exports = {
     },
   },
 
-  testing: {
+  staging: {
     client: 'sqlite3',
     useNullAsDefault: true, // needed for sqlite
     connection: {
-      filename: './data/testData.db3'
+      filename: './data/stageData.db3'
     },
     migrations: {
       directory: './data/migrations'

@@ -1,0 +1,11 @@
+const cleaner = require('knex-cleaner');
+
+exports.seed = function(knex, Promise) {
+
+  let options = {
+    mode: 'delete', // Valid options 'truncate', 'delete'
+    // restartIdentity: true, // Used to tell PostgresSQL to reset the ID counter
+    ignoreTables: ['knex_migrations', 'knex_migrations_lock']
+  }
+  return cleaner.clean(knex, options); // cleans all tables and resets primary keys
+}
