@@ -20,13 +20,14 @@
     "helmet": "^3.21.2",
     "knex": "^0.20.7",
     "knex-cleaner": "^1.3.0",
-    "sqlite3": "^4.1.1"
+    "pg": "^7.18.1"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
     "jest": "^24.9.0",
     "nodemon": "^2.0.2",
+    "sqlite3": "^4.1.1",
     "supertest": "^4.0.2"
   }
 }
